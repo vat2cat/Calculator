@@ -5,14 +5,14 @@ import java.awt.event.*;
 
 public class win3 extends Frame implements ActionListener
 {	
-	 private static Frame f=new Frame("­pºâ¾÷");
+	 private static Frame f=new Frame("è¨ˆç®—æ©Ÿ");
 	 private static Panel pn1=new Panel(new GridLayout(4,3));
 	 private static Panel pn2=new Panel(new GridLayout(4,1));
 	 private static Label lab=new Label("0",Label.RIGHT);
-	 private static Button cn,ad,sub,amo; //clear¡B+¡B-¡B=
+	 private static Button cn,ad,sub,amo; //clearã€+ã€-ã€=
 	 private static Button dig[]=new Button[10]; //0~9
-	 private static long num; //¦s©ñµ²ªG
-	 private static byte op; //¥Nªí¹Bºâ¤l
+	 private static long num; //å­˜æ”¾çµæœ
+	 private static byte op; //ä»£è¡¨é‹ç®—å­
 	
 	public static void main(String[] a)
 	{
@@ -26,7 +26,7 @@ public class win3 extends Frame implements ActionListener
 		 pn1.setBounds(20,60,90,105);
 		 pn2.setBounds(110,60,30,105);
 		 
-		 for(int i=0;i<=9;i++)//¼Æ¦r0~9
+		 for(int i=0;i<=9;i++)//æ•¸å­—0~9
 		 {
 		   dig[i]=new Button(Integer.toString(i));
 		   pn1.add(dig[i]);
@@ -60,9 +60,9 @@ public class win3 extends Frame implements ActionListener
 		{
 			try
 			{
-				long result;//¦s©ñ¥Ñ¦r¦êÂà¦¨ªº¼Æ­È
+				long result;//å­˜æ”¾ç”±å­—ä¸²è½‰æˆçš„æ•¸å€¼
 				Button btn=(Button) e.getSource();
-				try{//³B²z1~9
+				try{//è™•ç†1~9
 					for(int i=0;i<=9;i++)
 					{
 						if(btn==dig[i])
@@ -70,7 +70,7 @@ public class win3 extends Frame implements ActionListener
 					}
 					if(btn==cn)
 					{
-						result=0L;//§âÀx¦sªºµ²ªGÂk0 
+						result=0L;//æŠŠå„²å­˜çš„çµæœæ­¸0 
 						num=0L; op=0;
 						lab.setText(Long.toString(num));
 					}
@@ -85,23 +85,23 @@ public class win3 extends Frame implements ActionListener
 	            	 		case 2: num-=result; break;
 	            	 		default:
 						}
-						result=0L; //¿é¥X¹Bºâ«áªºµ²ªG¨ìÅã¥Ü¾¹
+						result=0L; //è¼¸å‡ºé‹ç®—å¾Œçš„çµæœåˆ°é¡¯ç¤ºå™¨
 						lab.setText(Long.toString(num));
 					}
 					}catch(ArithmeticException ae)
 				    { 
-						//®·®»³Q°£¼Æ¬O¹sªº¨Ò¥~ 
+						//æ•æ‰è¢«é™¤æ•¸æ˜¯é›¶çš„ä¾‹å¤– 
 					}
 			}catch(NumberFormatException ne) 
 			{
-				//®·®»¨Ò¥~ 
+				//æ•æ‰ä¾‹å¤– 
 			}
 		}
-	      private void od(Button btn)//¿é¥X¼Æ­È¨ìÅã¥Ü¾¹
+	      private void od(Button btn)//è¼¸å‡ºæ•¸å€¼åˆ°é¡¯ç¤ºå™¨
 	      {
 	    	  lab.setText(Long.toString(Long.parseLong(lab.getText()+btn.getLabel())));
 	      }
-	      private void sn(Button oper) //§â²Ä¤@²Õªº´Ó¦s°_¨Ó
+	      private void sn(Button oper) //æŠŠç¬¬ä¸€çµ„çš„æ¤å­˜èµ·ä¾†
 	      {
 	          num=Long.parseLong(lab.getText());
 	          lab.setText(Long.toString(0L));
@@ -115,6 +115,3 @@ public class win3 extends Frame implements ActionListener
 		
 	}
 }
-
-
-
